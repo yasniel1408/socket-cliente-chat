@@ -32,27 +32,26 @@ const Chat = ({ nombre }) => {
   };
 
   return (
-    <div>
-      <div className="chat">
+    <div className="divChat">
+      <table className="chat">
         {mensajes.map((e, i) => (
-          <div key={i}>
-            <div>{e.nombre}</div>
-            <div>{e.mensaje}</div>
-          </div>
+          <tr key={i}>
+            <td>
+              {e.nombre}
+              {":"}
+            </td>
+            <td>{e.mensaje}</td>
+          </tr>
         ))}
         <div ref={divRef}></div>
-      </div>
-      <form onSubmit={submit}>
-        <label htmlFor="">Escriba su mensaje</label>
-        <textarea
-          name=""
-          id=""
-          cols="30"
-          rows="10"
+      </table>
+      <form className="formSend" onSubmit={submit}>
+        <input
+          required
           value={mensaje}
           onChange={(e) => setMensaje(e.target.value)}
-        ></textarea>
-        <button>Enviar</button>
+        />
+        <button type="submit">Send</button>
       </form>
     </div>
   );

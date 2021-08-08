@@ -18,7 +18,9 @@ function App() {
       {!registrado && (
         <form onSubmit={registrar}>
           <label htmlFor="">Introduzca su nombre</label>
+          <br />
           <input value={nombre} onChange={(e) => setNombre(e.target.value)} />
+          <br />
           <button>Ir al chat</button>
         </form>
       )}
